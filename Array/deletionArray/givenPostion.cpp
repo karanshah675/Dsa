@@ -1,12 +1,11 @@
-// shift all elements left by 1 reduse the size
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    int arr[4] = {1, 2, 3, 4};
+int main() {
+     int arr[4] = {1, 2, 3, 4};
     int n = sizeof(arr) / sizeof(arr[0]);
-    for (int i = 0; i < n - 1; i++)
+    int postion = 2;
+    for (int i = postion; i < n - 1; i++)
     {
         arr[i] = arr[i+1];
     }
