@@ -11,8 +11,12 @@ void selectionSort(vector<int> &vc, int n)
     int minIndex = 0;
     for (int i = 0; i < n - 1; i++)
     {
-       int j=i+1;
-       
+        int j=i+1;
+        int key = arr[i];
+        while(j>=0 && arr[j]<arr[i]){
+            
+        }   
+
     }
 }
 
