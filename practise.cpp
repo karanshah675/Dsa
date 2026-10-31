@@ -3,8 +3,12 @@ using namespace std;
 
 int main()
 {
-    int n = -2147483648;
+    string str = "axxxxyyyyb";
+    cout << str.substr(4, 2) << endl;
+    str.erase(4, 2);
+    cout << str.substr(3, 2) << endl;
+    str.erase(3, 2);
+    cout << str;
 
-    cout << abs(n);
     return 0;
 }
