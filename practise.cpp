@@ -1,24 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int findSum(int n)
+{
+    int sum = 0;
+    while (n != 0)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
 int main()
 {
-    vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
-    vector<int> oddSum;
-    int sum = 0;
-    oddSum.push_back(arr[0]);
-    for (int i = 1; i < arr.size(); i++)
+    string temp = "";
+    int i = 0;
+    string s = "11111222223";
+    int k = 3;
+    while (s.size() != k)
     {
-        oddSum.push_back(arr[i - 1] + arr[i]);
-        oddSum.push_back(arr[i]);
+        int sum = findSum(stoi(s.substr(i, k)));
+        temp += to_string(sum);
+        i += k;
+        if (i > s.size())
+        {
+            s = temp;
+            i = 0;
+        }
     }
-    for (auto i : arr)
-    {
-        sum += i;
-    }
-    oddSum.push_back(sum);
-    for (auto i : oddSum)
-    {
-        cout << i << " ";
-    }
+    // return s;
+    cout << s;
 }
