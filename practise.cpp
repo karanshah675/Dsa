@@ -1,34 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int findSum(int n)
-{
-    int sum = 0;
-    while (n != 0)
-    {
-        sum += n % 10;
-        n /= 10;
-    }
-    return sum;
-}
-
 int main()
 {
-    string temp = "";
-    int i = 0;
-    string s = "11111222223";
-    int k = 3;
-    while (s.size() != k)
+    string num1 = "11";
+    string num2 = "123";
+    int n1 = 0;
+    int n2 = 0;
+    for (auto i : num1)
     {
-        int sum = findSum(stoi(s.substr(i, k)));
-        temp += to_string(sum);
-        i += k;
-        if (i > s.size())
-        {
-            s = temp;
-            i = 0;
-        }
+        n1 = (n1 * 10) + (i - '0');
     }
-    // return s;
-    cout << s;
+    for (auto i : num2)
+    {
+        n2 = (n2 * 10) + (i - '0');
+    }
+    cout << n1 << ":" << n2 << endl;
+    int sum = n1 + n2;
+    cout << sum << endl;
+    string str = "";
+    while (sum != 0)
+    {
+        str += to_string(sum / 10);
+        sum = sum%10;
+    }
+    cout << str;
+    return 0;
 }
