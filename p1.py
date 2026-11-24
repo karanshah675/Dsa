@@ -1,3 +1,16 @@
-ls = [x for x in range(4)]
-disc = {x: x**2 for x in range(3)}
-print(disc)
+class StudentData:
+    school_nam="abc"
+
+    def __init__(self,name,age):
+        self.name= name
+        self.age=age
+    @classmethod
+    def change_school(cls,name):
+        print(StudentData.school_nam)
+        StudentData.school_nam=name
+jessa= StudentData("jessa",33)
+StudentData.change_school("stanford")
+StudentData.change_school("oxford")
+print(jessa.age)
+
+        
